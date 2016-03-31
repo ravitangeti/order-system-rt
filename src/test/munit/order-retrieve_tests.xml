@@ -28,7 +28,7 @@ http://www.mulesoft.org/schema/mule/mock http://www.mulesoft.org/schema/mule/moc
         </munit:set>
         <flow-ref name="retrieveOrders" doc:name="retriveOders"/>
         <logger message="#[message.payload]" level="INFO" doc:name="Logger"/>
-        <munit:assert-true condition="#[message.payload is java.util.LinkedHashMap]" doc:name="Assert True"/>
+        <munit:assert-true condition="#[message.payload is java.util.Map]" doc:name="Assert True"/>
         <munit:assert-true condition="#[message.payload.size() &gt; 0]" doc:name="Assert True"/>
     </munit:test>
 </mule>
